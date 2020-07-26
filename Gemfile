@@ -59,3 +59,7 @@ gem 'devise', '~> 4.2'
 #bootstrap
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
+
+##facebook auth
+gem 'omniauth', '~> 1.6'
+gem 'omniauth-facebook', '~> 4.0'
