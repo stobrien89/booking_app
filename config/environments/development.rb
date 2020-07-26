@@ -62,13 +62,23 @@ Rails.application.configure do
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  config.action_mailer.deliver_method = :smtp
+  config.action_mailer.delivery_method = :smtp
+  
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com'
-    port: 587
-    enable_starttls_auto: true,
-    authentication: 'plain',
-    user_name: 'cage.nicolas.demo@gmail.com'
-    password: 'Test2020!'
+    :address => 'smtp.mailgun.org',
+    :port => 587,
+    :authentication => 'plain',
+    :domain => 'sandbox94f9db8c40434a128050d3027698e736.mailgun.org',
+    :user_name => 'postmaster@sandbox94f9db8c40434a128050d3027698e736.mailgun.org',
+    :password => 'e82ebfa16fbed04916f74ad667585a45-ffefc4e4-4487dae2',
   }
+  
+  # config.action_mailer.smtp_settings = {
+  #   :address => 'smtp-relay.sendinblue.com',
+  #   :port => 587,
+  #   :authentication => 'login',
+  #   :user_name => 'obrien.sean.dev@gmail.com',
+  #   :password => 'Ug68RcQAVksIfKOa',
+  #   :enable_starttls_auto => true
+  # }
 end
