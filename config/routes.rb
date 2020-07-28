@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'pages#home'
   
   devise_for :users,
             path: '',
@@ -14,5 +15,6 @@ Rails.application.routes.draw do
       get 'photo_upload'
       get 'amenities'
       get 'location'
+    end
   end
 end
