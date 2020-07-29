@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'pricing'
       get 'description'
       get 'photo_upload'
+      delete 'delete_image_attachment'
       get 'amenities'
       get 'location'
     end

@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :set_room, except: [:index, :new, :create]
+  before_action :set_room, except: [:index, :new, :create, :delete_image_attachment]
   before_action :authenticate_user!, except: [:show]
   before_action :is_authorized, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
 
@@ -55,6 +55,12 @@ class RoomsController < ApplicationController
     else
       flash[:alert] = "Something went wrong."
     end
+    redirect_back(fallback_location: request.referer)
+  end
+
+  def delete_image_attachment
+    @image = ActiveStorage::Attachment.find(params[:id])
+    @image.purge
     redirect_back(fallback_location: request.referer)
   end
 

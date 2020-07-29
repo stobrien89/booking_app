@@ -5,7 +5,10 @@
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading preview">
-                    <%= image_tag image %>
+                    <%= image_tag image, class: "img-thumbnail" %>
+                </div>
+                <div class="panel-body">
+                    <%= link_to "Remove", delete_image_attachment_room_path(image.id, image), method: :delete, data: {confirm: "Are you sure?"} %>
                 </div>
             </div>
         </div>
