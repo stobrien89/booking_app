@@ -50,7 +50,6 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
-      # @room.images.attach(params[:images])
       flash[:notice] = "Your changes have been saved."
     else
       flash[:alert] = "Something went wrong."
