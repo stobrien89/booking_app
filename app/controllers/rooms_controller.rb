@@ -1,6 +1,7 @@
 class RoomsController < ApplicationController
   before_action :set_room, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
+  before_action :is_authorized, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
 
   def index
     @rooms = current_user.rooms
@@ -49,6 +50,7 @@ class RoomsController < ApplicationController
 
   def update
     if @room.update(room_params)
+      # @room.images.attach(params[:images])
       flash[:notice] = "Your changes have been saved."
     else
       flash[:alert] = "Something went wrong."
@@ -59,6 +61,10 @@ class RoomsController < ApplicationController
   private
     def set_room
       @room = Room.find(params[:id])
+    end
+
+    def is_authorized
+      redirect_to root_path, alert: "Access Denied" unless current_user.id == @room.user_id
     end
 
     def room_params
