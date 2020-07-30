@@ -1,0 +1,97 @@
+<!-- Image -->
+<div class="row">
+    <div class="col-md-12">
+        <%= image_tag @room.images[0], class: "img-responsive" %>
+    </div>
+</div>
+<br>
+
+<div class="row">
+
+    <!-- Left Panel -->
+    <div class="col-md-8">
+
+        <!-- Listing Name -->
+        <div class="row">
+            <div class="col-md-8">
+                <h1><%= @room.listing_name %></h1>
+                <%= @room.address %>
+            </div>
+            <div class="col-md-4 text-center">
+                <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %> <br><br>
+                <%= @room.user.fullname %>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Room Info -->
+        <div class="row">
+            <div class="row text-center row-space-1">
+                <div class="col-md-3">
+                    <i class="fa fa-home fa-2x"></i>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-user-circle-o fa-2x"></i>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-bed fa-2x"></i>
+                </div>
+                <div class="col-md-3">
+                    <i class="fa fa-bath fa-2x"></i>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-3"><%= @room.home_type %></div>
+                <div class="col-md-3"><%= pluralize(@room.accomodates, "Guest") %></div>
+                <div class="col-md-3"><%= pluralize(@room.bedrooms, "Bedroom") %></div>
+                <div class="col-md-3"><%= pluralize(@room.bathrooms, "Bathroom") %></div>
+            </div>
+        </div>
+        <hr>
+
+        <!-- About -->
+        <div class="row">
+            <div class="col-md-12">
+                <h3>About This Listing</h3>
+                <p><%= @room.summary %></p>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Amenities -->
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Amenities</h4>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="amenities">
+                            <li><i class="fa fa-wifi"></i>&nbsp;&nbsp;Internet</li>
+                            <li><i class="fa fa-tv"></i> &nbsp;&nbsp; TV</li>
+                            <li><i class="fa fa-spoon"></i>&nbsp;&nbsp; Kitchen</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="amenities">
+                            <li><i class="fa fa-snowflake-o"></i>&nbsp;&nbsp; Air-Conditioning</li>
+                            <li><i class="fa fa-fire"></i>&nbsp;&nbsp; Heating</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+
+        <!-- Carousel -->
+        <div class="row">
+            
+        </div>
+        <hr>
+    </div>
+    <!-- Right Panel -->
+    <div class="col-md-4">
+        <!--Reservation Form -->
+    </div>
+</div>
