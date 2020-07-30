@@ -119,6 +119,40 @@
             <% end %>
         </div>
         <hr>
+
+        <!-- Map -->
+        <div class="row">
+            <div id="map" style="width: 100%; height: 400px"></div>
+            <script>
+                var map;
+                function initMap() {
+                    var location = {
+                        lat: <%= @room.latitude %>,
+                        lng: <%= @room.longitude %>
+                    };
+                    var zoom = 16;
+                    map = new google.maps.Map(document.getElementById('map'), {
+                    center: location,
+                    zoom: zoom
+                });
+                var marker = new google.maps.Marker({
+                    position: location,
+                    map: map
+                });
+                var contentString = '<div id="content"><%= image_tag @images[0], class:"avatar-full" %></div>';
+                var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                });
+                marker.addListener('click', function() {
+                    infowindow.open(map, marker);
+                })
+            }
+            </script>
+            <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ_Dn5rMHkyzxbjWVa2WMn0G8OsW5EXsM&amp;callback=initMap"></script>
+
+        </div>
+        <hr>
+
     </div>
     <!-- Right Panel -->
     <div class="col-md-4">

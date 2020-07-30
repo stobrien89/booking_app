@@ -63,3 +63,6 @@ gem 'sassc-rails', '>= 2.1.0'
 ##facebook auth
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-facebook', '~> 4.0'
+
+## Lat and long for addresses
+gem 'geocoder', '~> 1.4'
