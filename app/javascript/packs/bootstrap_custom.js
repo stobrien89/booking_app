@@ -11,5 +11,5 @@ import "bootstrap/js/dist/tab";
 import "bootstrap/js/dist/toast";
 import "bootstrap/js/dist/tooltip";
 import "bootstrap/js/dist/util";
-import "bootstrap/js/dist/toast";
+import "bootstrap/js/dist/";
 import "bootstrap/js/dist/carousel";

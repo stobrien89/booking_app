@@ -22,7 +22,7 @@ class RoomsController < ApplicationController
   end
 
   def show
-
+    @images = @room.images
   end
 
   def listing
