@@ -11,8 +11,9 @@ require("channels");
 import "./bootstrap_custom.js";
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
+import { ajax } from "jquery";
 flatpickr(".datepicker", {
-  //   dateFormat: "d-m-Y",
+  dateFormat: "d-m-Y",
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
