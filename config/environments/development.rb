@@ -70,7 +70,7 @@ Rails.application.configure do
     :authentication => 'plain',
     :domain => 'sandbox94f9db8c40434a128050d3027698e736.mailgun.org',
     :user_name => 'postmaster@sandbox94f9db8c40434a128050d3027698e736.mailgun.org',
-    :password => 'e82ebfa16fbed04916f74ad667585a45-ffefc4e4-4487dae2',
+    :password => 'fec09c9007a0d9b8b56980eb0e73bb86-a65173b1-5d2c575c',
   }
   
   # config.action_mailer.smtp_settings = {
