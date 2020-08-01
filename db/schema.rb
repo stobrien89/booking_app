@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_30_194918) do
+ActiveRecord::Schema.define(version: 2020_07_31_215828) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -44,6 +44,22 @@ ActiveRecord::Schema.define(version: 2020_07_30_194918) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["room_id"], name: "index_reservations_on_room_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "rating", default: 1
+    t.integer "room_id", null: false
+    t.integer "reservation_id", null: false
+    t.integer "guest_id", null: false
+    t.integer "host_id", null: false
+    t.string "type"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["guest_id"], name: "index_reviews_on_guest_id"
+    t.index ["host_id"], name: "index_reviews_on_host_id"
+    t.index ["reservation_id"], name: "index_reviews_on_reservation_id"
+    t.index ["room_id"], name: "index_reviews_on_room_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -95,5 +111,9 @@ ActiveRecord::Schema.define(version: 2020_07_30_194918) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
+  add_foreign_key "reviews", "guests"
+  add_foreign_key "reviews", "hosts"
+  add_foreign_key "reviews", "reservations"
+  add_foreign_key "reviews", "rooms"
   add_foreign_key "rooms", "users"
 end
