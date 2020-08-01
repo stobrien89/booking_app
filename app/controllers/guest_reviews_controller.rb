@@ -5,7 +5,7 @@ class GuestReviewsController < ApplicationController
             room_id: guest_review_params[:room_id]
         ).first
 
-        if @reservation.nil? && @reservation.room.user.id == guest_review_params[:host_id].to_i
+        if !@reservation.nil? && @reservation.room.user.id == guest_review_params[:host_id].to_i
             @has_reviewed = GuestReview.where(
                 reservation_id: @reservation.id,
                 host_id: guest_review_params[:host_id]

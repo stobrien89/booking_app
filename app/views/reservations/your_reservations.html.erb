@@ -29,12 +29,12 @@
                             <% end %>
                         </div>
                         <div class="col-md-5">
-                            <%= link_to reservation.room.listing_name, room_path(reservation.room) %><br/><br/>
+                            <%= link_to reservation.room.listing_name, room_path(reservation.room) %><br/>
                             <span>
-                            <%= link_to user_path(reservation.user) do %>
-                                <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %>
-                                <%= reservation.user.fullname %>
-                            <% end %>
+                                <%= link_to user_path(reservation.user) do %>
+                                    <%= image_tag avatar_url(reservation.user), class: "img-circle avatar-small" %>&nbsp;
+                                    <%= reservation.user.fullname %>
+                                <% end %>
                             </span>
                         </div>
                          <div class="col-md-3 text-right">
