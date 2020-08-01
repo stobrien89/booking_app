@@ -111,9 +111,9 @@ ActiveRecord::Schema.define(version: 2020_07_31_215828) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "reservations", "rooms"
   add_foreign_key "reservations", "users"
-  add_foreign_key "reviews", "guests"
-  add_foreign_key "reviews", "hosts"
   add_foreign_key "reviews", "reservations"
   add_foreign_key "reviews", "rooms"
+  add_foreign_key "reviews", "users", column: "guest_id"
+  add_foreign_key "reviews", "users", column: "host_id"
   add_foreign_key "rooms", "users"
 end
