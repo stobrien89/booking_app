@@ -57,8 +57,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.2'
 
 #bootstrap
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'sassc-rails', '>= 2.1.0'
+# gem 'bootstrap-sass', '~> 3.4.1'
+# gem 'sassc-rails', '>= 2.1.0'
 
 ##facebook auth
 gem 'omniauth', '~> 1.6'

@@ -7,11 +7,10 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
-// import "../stylesheets/application";
-import "./bootstrap_custom.js";
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
-import { ajax } from "jquery";
+import("jquery");
+import "bootstrap";
+require("flatpickr");
+require("flatpickr/dist/flatpickr.min.css");
 flatpickr(".datepicker", {
   dateFormat: "d-m-Y",
 });
