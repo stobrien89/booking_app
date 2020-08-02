@@ -66,3 +66,6 @@ gem 'omniauth-facebook', '~> 4.0'
 
 ## Lat and long for addresses
 gem 'geocoder', '~> 1.4'
+
+#search functionality
+gem 'ransack'
