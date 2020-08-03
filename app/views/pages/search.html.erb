@@ -2,8 +2,15 @@
     <div id="left">
         <!-- Search Panel -->
         <div class="row">
+            <div class="col-md-offset-4 col-md-4">
+                <button id="filter" class="btn btn-default" data-toggle="collapse" data-target="#collapsePanel">
+                    Filters <i class="fa fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
             <br>
-            <div id="collapsePanel">
+            <div class = "collapse" id="collapsePanel">
                 <%= search_form_for @search, url: search_path do |f|%>
                     <div class="row">
                         <div class="col-md-8">
@@ -108,8 +115,52 @@
         </div>
     </div>
     <div id="right">
-        <!-- Map -->
-
-
+        <div id="map" style="width: 100%; height: 100%;"></div>
+            <script>
+                var map;
+                function initMap() {
+                    var location = {
+                        lat: 122.2221,
+                        lng: 47.5707
+                    };
+                    <% if @roomsArr.length > 0 %>
+                        location = {lat: <%= @roomsArr[0].latitude %>, lng: <%= @roomsArr[0].longitude %>}
+                    <% end %>
+                    var zoom = 11;
+                    map = new google.maps.Map(document.getElementById('map'), {
+                    center: location,
+                    zoom: zoom
+                });
+                <% @roomsArr.each do |room| %>
+                    var marker = new google.maps.Marker({
+                    position: {lat: <%= room.latitude %>, lng: <%= room.longitude %>},
+                    map: map
+                    });
+                    var contentString = '<div id="content">$<%= room.price %></div>';
+                    var infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                    });
+                    
+                    marker.addListener('click', function() {
+                        infowindow.open(map, marker);
+                    })
+                <% end %> 
+                
+            }
+            </script>
+            <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ_Dn5rMHkyzxbjWVa2WMn0G8OsW5EXsM&amp;callback=initMap"></script>
     </div>
 </div>
+
+<script>
+    let open = true;
+
+    $('#filter').click(() => {
+        if (open) {
+            $('#filter').html("Filters <i class='fa fa-chevron-up'></i>")
+        } else {
+            $('#filter').html("Filters <i class='fa fa-chevron-down'></i>")
+        }
+        open = !open;
+    });
+</script>
