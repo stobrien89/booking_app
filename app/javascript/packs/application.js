@@ -11,6 +11,7 @@ require("jquery");
 import "bootstrap";
 import flatpickr from "flatpickr";
 require("raty-js");
+require("geocomplete");
 require("flatpickr/dist/flatpickr.min.css");
 document.addEventListener("turbolinks:load", () => {
   flatpickr(".datepicker", {
