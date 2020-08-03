@@ -11,7 +11,7 @@
         <div class="row">
             <br>
             <div class = "collapse" id="collapsePanel">
-                <%= search_form_for @search, url: search_path do |f|%>
+                <%= search_form_for @search, url: search_path, remote: true do |f|%>
                     <div class="row">
                         <div class="col-md-8">
                             <label>Price Range:</label>
@@ -94,30 +94,14 @@
             </div>
             <br>
             
-            <div class="row">
-                <% @roomsArr.each do |room| %>
-                    <div class="col-md-4">
-                        <div class="panel panel-default">
-                            <div class="panel-heading preview">
-                                <% if room.images.length > 0 %>
-                                    <%= image_tag room.images[0], class: "img-thumbnail" %>
-                                <% else %>
-                                    <%= image_tag "blank.jpg", class: "img-thumbnail" %>
-                                <% end %>
-                            </div>
-                            <div class="panel-body">
-                                <%= link_to room.listing_name, room %>
-                            </div>
-                        </div>
-                    </div>
-                <% end %> 
+            <div class="row" id="search_results">
+                <%= render partial: "rooms/rooms_list", locals: {rooms: @roomsArr} %>
             </div>
         </div>
     </div>
     <div id="right">
         <div id="map" style="width: 100%; height: 100%;"></div>
             <script>
-                var map;
                 function initMap() {
                     var location = {
                         lat: 122.2221,
@@ -126,27 +110,33 @@
                     <% if @roomsArr.length > 0 %>
                         location = {lat: <%= @roomsArr[0].latitude %>, lng: <%= @roomsArr[0].longitude %>}
                     <% end %>
-                    var zoom = 11;
-                    map = new google.maps.Map(document.getElementById('map'), {
-                    center: location,
-                    zoom: zoom
-                });
-                <% @roomsArr.each do |room| %>
-                    var marker = new google.maps.Marker({
-                    position: {lat: <%= room.latitude %>, lng: <%= room.longitude %>},
-                    map: map
-                    });
-                    var contentString = '<div id="content">$<%= room.price %></div>';
-                    var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                    });
                     
-                    marker.addListener('click', function() {
-                        infowindow.open(map, marker);
-                    })
-                <% end %> 
+                    map = new google.maps.Map(document.getElementById('map'), {
+                        center: location,
+                        zoom: 12
+                    });
+
+                    setMarkers(map)
+                }
+
+                function setMarkers(map) {
+                    var marker, infowindow;
+                    
+                    <% @roomsArr.each do |room| %>
+                        marker = new google.maps.Marker({
+                            position: {lat: <%= room.latitude %>, lng: <%= room.longitude %>},
+                            map: map
+                        });
+                        infowindow = new google.maps.InfoWindow({
+                            content: '<div id="content">$<%= room.price %></div>',
+                            offset: 1
+                        });
+                    
+                        infowindow.open(map, marker)
+                    <% end %> 
+                }
                 
-            }
+            
             </script>
             <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ_Dn5rMHkyzxbjWVa2WMn0G8OsW5EXsM&amp;callback=initMap"></script>
     </div>

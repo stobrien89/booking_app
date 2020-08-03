@@ -1,0 +1,16 @@
+ <% rooms.each do |room| %>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading preview">
+                <% if room.images.length > 0 %>
+                    <%= image_tag room.images[0], class: "img-thumbnail" %>
+                <% else %>
+                    <%= image_tag "blank.jpg", class: "img-thumbnail" %>
+                <% end %>
+            </div>
+            <div class="panel-body">
+                <%= link_to room.listing_name, room %>
+            </div>
+        </div>
+    </div>
+<% end %> 
