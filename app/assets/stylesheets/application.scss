@@ -42,7 +42,11 @@ body {
 //Nav styles
 .navbar-default {
   background-color: #4056a1;
-  border: 20px solid #4056a1;
+  border: 10px solid #4056a1 !important;
+}
+
+.navbar-form {
+  width: auto;
 }
 
 .navbar-default,
@@ -53,65 +57,59 @@ body {
 }
 
 //Form Styles
-.form-group {
-  margin-bottom: 25px;
+.form-rounded {
+  width: 12vw !important;
+  font-size: 1.25rem;
+  text-align: left;
+  border: 1px solid #dddddd !important;
+  border-top-color: rgb(221, 221, 221) !important;
+  border-top-style: solid !important;
+  border-top-width: 1px !important;
+  border-right-color: rgb(221, 221, 221) !important;
+  border-right-style: solid !important;
+  border-right-width: 1px !important;
+  border-bottom-color: rgb(221, 221, 221) !important;
+  border-bottom-style: solid !important;
+  border-bottom-width: 1px !important;
+  border-left-color: rgb(221, 221, 221) !important;
+  border-left-style: solid !important;
+  border-left-width: 1px !important;
+  border-image-source: initial !important;
+  border-image-slice: initial !important;
+  border-image-width: initial !important;
+  border-image-outset: initial !important;
+  border-image-repeat: initial !important;
+  border-radius: 24px !important;
+  border-top-left-radius: 24px !important;
+  border-top-right-radius: 24px !important;
+  border-bottom-right-radius: 24px !important;
+  border-bottom-left-radius: 24px !important;
 }
 
-.form-group input {
-  height: 45px;
-  border: 1px;
+//glyphs inside of search fields
+.nav-search {
+  color: black;
 }
 
-.form-group textarea {
-  border: 1px;
+.inner-addon {
+  position: relative;
 }
 
-.form-group select {
-  width: 100%;
-  background-color: white;
-  border: 1px;
-  border-radius: 2px;
+/* style glyph */
+.inner-addon .nav-search {
+  position: absolute;
   padding: 10px;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
+  pointer-events: none;
 }
 
-.select:before {
-  position: absolute;
-  top: 35px;
-  right: 30px;
-  transform: scale(0.95, 0.62);
-  content: "\25bc";
-  font-size: 1.2em;
+/* align glyph */
+.right-addon .nav-search {
+  right: 0px;
 }
 
-.form-group input[type="checkbox"] {
-  height: 1.25em;
-  width: 1.25em;
-  margin-bottom: -0.25em;
-  margin-right: 5px;
-  vertical-align: top;
-  border: 1px;
-  border-radius: 3px;
-}
-
-.form-group input[type="checkbox"]:checked:before {
-  position: absolute;
-  width: 1.25em;
-  font-size: 0.95em;
-  text-align: center;
-  content: "\2713";
-}
-//Sidebar Styles
-.sidebar-list {
-  padding-left: 0;
-  list-style: none;
-}
-
-.sidebar-item {
-  padding: 10px 0;
-  font-size: 16px;
+/* add padding  */
+.right-addon input {
+  padding-right: 30px;
 }
 
 //User Profile styles
@@ -183,6 +181,10 @@ form-control.datepicker {
 }
 
 //Home Page
+.jumbotron {
+  padding-top: 70px !important;
+}
+
 .jumbotron-bg {
   background-image: url("https://vistapointe.net/images/santorini-8.jpg");
 

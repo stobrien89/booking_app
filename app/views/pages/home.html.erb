@@ -1,21 +1,22 @@
 <main role="main">
-    <section class="jumbotron text-center jumbotron-bg row">
-        <h1>Booking App</h1>
+    <section class="jumbotron jumbotron-bg">
+        <div class="container">
+        <h1 style="margin-top: 70px;">Booking App</h1>
         <p class="lead text-muted">
         Break out of your shell and do something different
         </p>
-        <div class="container">
+        
             <div class="form-horizontal">
                 <%= form_tag search_path, class: "form-group",  method: :get do %>
                     <div class="form-group">
                         
-                        <div class="col-md-6">
+                        <div class="col-md-2 col-sm-2">
                             <%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control ", id: "autolocation" %>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2 col-sm-2">
                             <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control form-control-sm datepicker" %>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2 col-sm-2">
                             <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control form-control-sm datepicker" %>
                         </div>
                         
@@ -23,7 +24,7 @@
                     <br>
             
                     <div class="row">
-                        <div class="col-md-offset-4 col-md-4">
+                        <div class="col-md-offset-2 col-md-2">
                             <%= submit_tag "Search", class: "btn btn-lg btn-submit btn-round btn-primary" %>
                         </div>
                     </div>
@@ -33,13 +34,14 @@
     </section>
 
     <!-- Homes/rooms -->
-
+    <div class="container">
     <div>
         <h3>Homes</h3>
     </div>
     <br>
     <div class="row">
     <%= render partial: "rooms/rooms_list", locals: {rooms: @rooms} %>
+    </div>
     </div>
 
     <!-- Cities -->

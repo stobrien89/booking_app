@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button
@@ -17,18 +17,9 @@
       <%= link_to "BookingSite", root_path, class: "navbar-brand" %>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
-      <%= form_tag search_path, class: "navbar-form navbar-left", method: :get do %>
-        <div class="form-group">
-          <%= text_field_tag :search, params[:search], placeholder: "Where would you like to go?", class: "form-control" %>
-        </div>
-      <% end %>
+      
 
       <ul class="nav navbar-nav navbar-right">
-        <li>
-          <button class="btn btn-form btn-small">
-            <%= link_to "Become A Host", new_room_path, style: "color: white, text-decoration: none;" %>
-          </button>
-        </li>
         <% if (!user_signed_in?)%>
             <li><a href="#"><%= link_to "Login", new_user_session_path %></a></li>
             <li><a href="#"><%= link_to "Sign Up", new_user_registration_path %></a></li>
@@ -55,11 +46,15 @@
                     <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
                 </ul>
             </li>
-
         <% end %>
-
-    
       </ul>
+      
+      <%= form_tag search_path, class: "navbar-form text-center", method: :get do %>
+        <div class="form-group inner-addon right-addon">
+          <i class="fa fa-search nav-search"></i>
+          <%= text_field_tag :search, params[:search], placeholder: "Where would you like to go?", class: "form-control form-rounded" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </nav>
