@@ -26,11 +26,13 @@
 // light blue: #C5CBE3
 // off-white : #F0F1EB
 
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito+Sans:wght@300&display=swap");
+
 body {
   margin: 0 auto;
   background-color: #f0f1eb;
   color: #4056a1;
-  font-family: "Helvetica Neue";
+  font-family: "Nunito Sans", sans-serif;
 }
 
 .container {
