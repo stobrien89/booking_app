@@ -40,20 +40,28 @@ body {
 }
 
 //Nav styles
-.navbar-default {
+
+.navbar-default,
+navbar-nav {
   background-color: #4056a1;
   border: 10px solid #4056a1 !important;
+}
+.dropdown-toggle {
+  background-color: #4056a1 !important;
+}
+
+.navbar-default .navbar-nav > li > a,
+.navbar-brand {
+  color: #f0f1eb !important;
 }
 
 .navbar-form {
   width: auto;
 }
 
-.navbar-default,
-.navbar-brand {
-  font-size: 6 em !important;
-  font-weight: 300;
-  color: #f0f1eb !important;
+.dropdown-menu,
+.dropdown-menu > a {
+  border-radius: 20px !important;
 }
 
 //Form Styles
@@ -186,7 +194,7 @@ form-control.datepicker {
 }
 
 .jumbotron-bg {
-  background-image: url("https://vistapointe.net/images/santorini-8.jpg");
+  background-image: url("santorini.jpg");
 
   /* Full height */
   height: 70vh;
