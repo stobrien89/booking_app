@@ -57,11 +57,6 @@ body {
   margin-bottom: 25px;
 }
 
-.form-control {
-  height: 4rem;
-  border-radius: 3px;
-}
-
 .form-group input {
   height: 45px;
   border: 1px;
@@ -185,4 +180,17 @@ form-control.datepicker {
   width: 450px;
   top: 0;
   right: 0;
+}
+
+//Home Page
+.jumbotron-bg {
+  background-image: url("https://vistapointe.net/images/santorini-8.jpg");
+
+  /* Full height */
+  height: 70vh;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
