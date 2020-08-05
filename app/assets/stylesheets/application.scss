@@ -31,12 +31,15 @@
 body {
   margin: 0 auto;
   background-color: #f0f1eb;
-  color: #4056a1;
   font-family: "Nunito Sans", sans-serif;
 }
 
 .container {
   width: 80% !important;
+}
+
+main {
+  margin-top: 70px;
 }
 
 //Nav styles
@@ -92,6 +95,11 @@ navbar-nav {
   border-top-right-radius: 24px !important;
   border-bottom-right-radius: 24px !important;
   border-bottom-left-radius: 24px !important;
+}
+
+.search-btn {
+  background-color: #d79922;
+  color: #f0f1eb;
 }
 
 //glyphs inside of search fields
@@ -191,6 +199,11 @@ form-control.datepicker {
 //Home Page
 .jumbotron {
   padding-top: 70px !important;
+}
+
+.text-muted {
+  color: #efe2ba;
+  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
 .jumbotron-bg {

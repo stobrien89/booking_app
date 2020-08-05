@@ -1,174 +1,204 @@
-<div id="main" class="container">
-    <div id="left">
-        <!-- Search Panel -->
-        <div class="row">
-            <div class="col-md-offset-4 col-md-4">
-                <button id="filter" class="btn btn-default" data-toggle="collapse" data-target="#collapsePanel">
-                    Filters <i class="fa fa-chevron-down"></i>
-                </button>
-            </div>
+<main id="main">
+  <div id="left" class="col-md-6 col-lg-6" style="width: 50vw;">
+    <div class="container fluid">
+      <!-- filter panel -->
+      <div class="row">
+        <div class="col-md-offset-4 col-md-4">
+          <button
+            id="filter"
+            class="btn btn-default"
+            data-toggle="collapse"
+            data-target="#collapsePanel"
+          >
+            Filters <i class="fa fa-chevron-down"></i>
+          </button>
         </div>
-        <div class="row">
-            <br>
-            <div class = "collapse" id="collapsePanel">
-                <%= search_form_for @search, url: search_path, remote: true do |f|%>
-                    <div class="row">
-                        <div class="col-md-8">
-                            <label>Price Range:</label>
-                            <div id="slider-range"></div>
-                        </div>
-                        <div class="col-md-2">
-                            <label>Minimum Price:</label>
-                            <%= f.text_field :price_gteq, class: "form-control" %>
-                        </div>
-                        <div class="col-md-2">
-                            <label>Maximum Price:</label>
-                            <%= f.text_field :price_lteq, class: "form-control" %>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
-                        </div>
-                        <div class="col-md-6">
-                            <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control datepicker" %>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
-                        </div>
-                        <div class="col-md-4">
-                            <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Entire Room
-                        </div>
-                        <div class="col-md-4">
-                            <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Entire Room
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group select">
-                                <label>Guests</label>
-                                <%= f.select :accomodates_gteq, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]], id: "accomodates", prompt: "Select", class: "form_control" %>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group select">
-                                <label>Bedrooms</label>
-                                <%= f.select :bedrooms_gteq, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]], id: "bedrooms", prompt: "Select", class: "form_control" %>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group select">
-                                <label>Bathrooms</label>
-                                <%= f.select :bathrooms_gteq, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]], id: "bathrooms", prompt: "Select", class: "form_control" %>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-4">
-                            <%= check_box_tag "q[tv_eq]", true %> TV
-                        </div>
-                        <div class="col-md-4">
-                            <%= check_box_tag "q[internet_eq]", true %> Internet
-                        </div>
-                        <div class="col-md-4">
-                            <%= check_box_tag "q[kitchen_eq]", true %> Kitchen
-                        </div>
-                        <div class="col-md-4">
-                            <%= check_box_tag "q[air_conditioning_eq]", true %> Air Conditioning
-                        </div>
-                        <div class="col-md-4">
-                            <%= check_box_tag "q[heating_eq]", true %> Heating
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row text-center">
-                        <%= f.submit "Search", class: "btn btn-form" %>
-                    </div>
-
-                <% end %>
+      </div>
+      <!-- Collapsed content/filters -->
+      <div class="row">
+        <div class="collapse" id="collapsePanel">
+          <%= search_form_for @search, url: search_path, remote: true do |f|%>
+          <div class="row">
+            <div class="col-md-8">
+              <label>Price Range:</label>
+              <div id="slider-range"></div>
             </div>
-            <br>
-            
-            <div class="row" id="search_results">
-                <%= render partial: "rooms/rooms_list", locals: {rooms: @roomsArr} %>
+            <div class="col-md-2">
+              <label>Minimum Price:</label>
+              <%= f.text_field :price_gteq, class: "form-control" %>
             </div>
+            <div class="col-md-2">
+              <label>Maximum Price:</label>
+              <%= f.text_field :price_lteq, class: "form-control" %>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-md-6">
+              <%= text_field_tag :start_date, params[:start_date], placeholder:
+              "Start Date", class: "form-control datepicker" %>
+            </div>
+            <div class="col-md-6">
+              <%= text_field_tag :end_date, params[:end_date], placeholder: "End
+              Date", class: "form-control datepicker" %>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-md-4">
+              <%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[room_type_eq_any][]", "Private" %> Entire
+              Room
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Entire Room
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group select">
+                <label>Guests</label>
+                <%= f.select :accomodates_gteq, [["1", 1], ["2", 2], ["3", 3],
+                ["4", 4], ["5+", 5]], id: "accomodates", prompt: "Select",
+                class: "form_control" %>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group select">
+                <label>Bedrooms</label>
+                <%= f.select :bedrooms_gteq, [["1", 1], ["2", 2], ["3", 3],
+                ["4", 4], ["5+", 5]], id: "bedrooms", prompt: "Select", class:
+                "form_control" %>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group select">
+                <label>Bathrooms</label>
+                <%= f.select :bathrooms_gteq, [["1", 1], ["2", 2], ["3", 3],
+                ["4", 4], ["5+", 5]], id: "bathrooms", prompt: "Select", class:
+                "form_control" %>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-md-4">
+              <%= check_box_tag "q[tv_eq]", true %> TV
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[internet_eq]", true %> Internet
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[kitchen_eq]", true %> Kitchen
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[air_conditioning_eq]", true %> Air
+              Conditioning
+            </div>
+            <div class="col-md-4">
+              <%= check_box_tag "q[heating_eq]", true %> Heating
+            </div>
+          </div>
+          <hr />
+          <div class="row text-center">
+            <%= f.submit "Search", class: "btn btn-form" %>
+          </div>
+          <% end %>
         </div>
-    </div>
-    <div id="right">
-        <div id="map" style="position: absolute; bottom: 0; width: 100%; height: 100%; overflow: hidden;"></div>
-            <script>
-                function initMap() {
-                    var location = {
-                        lat: 122.2221,
-                        lng: 47.5707
-                    };
-                    <% if @roomsArr.length > 0 %>
-                        location = {lat: <%= @roomsArr[0].latitude %>, lng: <%= @roomsArr[0].longitude %>}
-                    <% end %>
-                    
-                    map = new google.maps.Map(document.getElementById('map'), {
-                        center: location,
-                        zoom: 12
-                    });
+      </div>
+      <br />
 
-                    setMarkers(map)
-                }
-
-                function setMarkers(map) {
-                    var marker, infowindow;
-                    
-                    <% @roomsArr.each do |room| %>
-                        marker = new google.maps.Marker({
-                            position: {lat: <%= room.latitude %>, lng: <%= room.longitude %>},
-                            map: map
-                        });
-                        infowindow = new google.maps.InfoWindow({
-                            content: '<div id="content">$<%= room.price %></div>',
-                            offset: 1
-                        });
-                    
-                        infowindow.open(map, marker)
-                    <% end %> 
-                }
-                
-            
-            </script>
-            <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ_Dn5rMHkyzxbjWVa2WMn0G8OsW5EXsM&amp;callback=initMap", data-turbolinks-eval="false"></script>
+      <div class="" id="search_results">
+        <%= render partial: "rooms/rooms_list", locals: {rooms: @roomsArr} %>
+      </div>
     </div>
-</div>
+  </div>
+
+  <div id="right" class="col-md-6 col-lg-6" style="width: 50vw;">
+    <div
+      id="map"
+      style="
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      "
+    ></div>
+    <script>
+      function initMap() {
+          var location = {
+              lat: 122.2221,
+              lng: 47.5707
+          };
+          <% if @roomsArr.length > 0 %>
+              location = {lat: <%= @roomsArr[0].latitude %>, lng: <%= @roomsArr[0].longitude %>}
+          <% end %>
+
+          map = new google.maps.Map(document.getElementById('map'), {
+              center: location,
+              zoom: 12
+          });
+
+          setMarkers(map)
+      }
+
+      function setMarkers(map) {
+          var marker, infowindow;
+
+          <% @roomsArr.each do |room| %>
+              marker = new google.maps.Marker({
+                  position: {lat: <%= room.latitude %>, lng: <%= room.longitude %>},
+                  map: map
+              });
+              infowindow = new google.maps.InfoWindow({
+                  content: '<div id="content">$<%= room.price %></div>',
+                  offset: 1
+              });
+
+              infowindow.open(map, marker)
+          <% end %>
+      }
+    </script>
+    <script
+      async=""
+      defer=""
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ_Dn5rMHkyzxbjWVa2WMn0G8OsW5EXsM&amp;callback=initMap"
+      ,
+      data-turbolinks-eval="false"
+    ></script>
+  </div>
+</main>
 
 <script>
-    let open = true;
+  let open = true;
 
-    $('#filter').click(() => {
-        if (open) {
-            $('#filter').html("Filters <i class='fa fa-chevron-up'></i>")
-        } else {
-            $('#filter').html("Filters <i class='fa fa-chevron-down'></i>")
-        }
-        open = !open;
-    });
+  $("#filter").click(() => {
+    if (open) {
+      $("#filter").html("Filters <i class='fa fa-chevron-up'></i>");
+    } else {
+      $("#filter").html("Filters <i class='fa fa-chevron-down'></i>");
+    }
+    open = !open;
+  });
 </script>
 
 <script>
-    $(function() {
-        $("#q_price_gteq").val('100');
-        $("#q_price_lteq").val('500');
-        $("#slider-range").slider({
-            range: true,
-            min: 0,
-            max: 1000,
-            values: [100, 500],
-            slide: function(event, ui) {
-                $("#q_price_gteq").val(ui.values[0]);
-                $("#q_price_lteq").val(ui.values[1]);
-            }
-        });
-    })
+  $(function () {
+    $("#q_price_gteq").val("100");
+    $("#q_price_lteq").val("500");
+    $("#slider-range").slider({
+      range: true,
+      min: 0,
+      max: 1000,
+      values: [100, 500],
+      slide: function (event, ui) {
+        $("#q_price_gteq").val(ui.values[0]);
+        $("#q_price_lteq").val(ui.values[1]);
+      },
+    });
+  });
 </script>
