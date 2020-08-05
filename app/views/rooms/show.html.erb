@@ -1,201 +1,216 @@
 <!-- Image -->
 <div class="row">
-    <div class="col-md-12">
-        <%= image_tag @room.images[0], class: "img-responsive" %>
-    </div>
+  <div class="col-md-12">
+    <%= image_tag @room.images[0], class: "img-responsive" %>
+  </div>
 </div>
-<br>
+<br />
 
-<div class="row">
-
+<div class="container">
+  <div class="row">
     <!-- Left Panel -->
     <div class="col-md-8">
-
-        <!-- Listing Name -->
-        <div class="row">
-            <div class="col-md-8">
-                <h1><%= @room.listing_name %></h1>
-                <%= @room.address %>
-            </div>
-            <div class="col-md-4 text-center">
-                <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large" %> <br><br>
-                <%= @room.user.fullname %>
-            </div>
+      <!-- Listing Name -->
+      <div class="row">
+        <div class="col-md-8">
+          <h1><%= @room.listing_name %></h1>
+          <%= @room.address %>
         </div>
-        <hr>
-
-        <!-- Room Info -->
-        <div class="row">
-            <div class="row text-center row-space-1">
-                <div class="col-md-3">
-                    <i class="fa fa-home fa-2x"></i>
-                </div>
-                <div class="col-md-3">
-                    <i class="fa fa-user-circle-o fa-2x"></i>
-                </div>
-                <div class="col-md-3">
-                    <i class="fa fa-bed fa-2x"></i>
-                </div>
-                <div class="col-md-3">
-                    <i class="fa fa-bath fa-2x"></i>
-                </div>
-            </div>
-
-            <div class="row text-center">
-                <div class="col-md-3"><%= @room.home_type %></div>
-                <div class="col-md-3"><%= pluralize(@room.accomodates, "Guest") %></div>
-                <div class="col-md-3"><%= pluralize(@room.bedrooms, "Bedroom") %></div>
-                <div class="col-md-3"><%= pluralize(@room.bathrooms, "Bathroom") %></div>
-            </div>
+        <div class="col-md-4 text-center">
+          <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large"
+          %> <br /><br />
+          <%= @room.user.fullname %>
         </div>
-        <hr>
+      </div>
+      <hr />
 
-        <!-- About -->
-        <div class="row">
-            <div class="col-md-12">
-                <h3>About This Listing</h3>
-                <p><%= @room.summary %></p>
-            </div>
+      <!-- Room Info -->
+      <div class="row">
+        <div class="row text-center row-space-1">
+          <div class="col-md-3">
+            <i class="fa fa-home fa-2x"></i>
+          </div>
+          <div class="col-md-3">
+            <i class="fa fa-user-circle-o fa-2x"></i>
+          </div>
+          <div class="col-md-3">
+            <i class="fa fa-bed fa-2x"></i>
+          </div>
+          <div class="col-md-3">
+            <i class="fa fa-bath fa-2x"></i>
+          </div>
         </div>
-        <hr>
 
-        <!-- Amenities -->
-        <div class="row">
-            <div class="col-md-3">
-                <h4>Amenities</h4>
-            </div>
-            <div class="col-md-9">
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul class="amenities">
-                            <li><i class="fa fa-wifi"></i>&nbsp;&nbsp;Internet</li>
-                            <li><i class="fa fa-tv"></i> &nbsp;&nbsp; TV</li>
-                            <li><i class="fa fa-spoon"></i>&nbsp;&nbsp; Kitchen</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <ul class="amenities">
-                            <li><i class="fa fa-snowflake-o"></i>&nbsp;&nbsp; Air-Conditioning</li>
-                            <li><i class="fa fa-fire"></i>&nbsp;&nbsp; Heating</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div class="row text-center">
+          <div class="col-md-3"><%= @room.home_type %></div>
+          <div class="col-md-3">
+            <%= pluralize(@room.accomodates, "Guest") %>
+          </div>
+          <div class="col-md-3">
+            <%= pluralize(@room.bedrooms, "Bedroom") %>
+          </div>
+          <div class="col-md-3">
+            <%= pluralize(@room.bathrooms, "Bathroom") %>
+          </div>
         </div>
-        <hr>
+      </div>
+      <hr />
 
-        <!-- Carousel -->
-        <div class="row">
+      <!-- About -->
+      <div class="row">
+        <div class="col-md-12">
+          <h3>About This Listing</h3>
+          <p><%= @room.summary %></p>
+        </div>
+      </div>
+      <hr />
 
-            <% if @images.length > 0 %>
+      <!-- Amenities -->
+      <div class="row">
+        <div class="col-md-3">
+          <h4>Amenities</h4>
+        </div>
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="amenities">
+                <li><i class="fa fa-wifi"></i>&nbsp;&nbsp;Internet</li>
+                <li><i class="fa fa-tv"></i> &nbsp;&nbsp; TV</li>
+                <li><i class="fa fa-spoon"></i>&nbsp;&nbsp; Kitchen</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <ul class="amenities">
+                <li>
+                  <i class="fa fa-snowflake-o"></i>&nbsp;&nbsp; Air-Conditioning
+                </li>
+                <li><i class="fa fa-fire"></i>&nbsp;&nbsp; Heating</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
 
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                    <ol class="carousel-indicators">
-                    <% @images.each do |img| %>
-                        <li data-target="$myCarousel" data-slide-to="<%= img.id %>"></li>
-                    <% end %>
-                    </ol>
+      <!-- Carousel -->
+      <div class="row">
+        <% if @images.length > 0 %>
 
-                <!-- Wrapper for slides -->
-                    <div class="carousel-inner">
-                        <% @images.each do |img| %>
-                            <div class="item <%= 'active' if img.id == @images[0].id %>">
-                                <%= image_tag img %>
-                            </div>
-                        <% end %>
-                    </div>
-
-                <!-- Left and right controls -->
-                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <% @images.each do |img| %>
+            <li data-target="$myCarousel" data-slide-to="<%= img.id %>"></li>
             <% end %>
-        </div>
-        <hr>
+          </ol>
 
-        <!-- Reviews -->
-        <div class="row">
-            <div class="col-md-12">
-                <h3>
-                    <%= pluralize(@guest_reviews.count, "Review") %>
-                    <span id="average_rating"></span>
-                </h3>
-                <div class="container">
-                    <div><%= render "reviews/guest_list" %></div>
-                </div>
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <% @images.each do |img| %>
+            <div class="item <%= 'active' if img.id == @images[0].id %>">
+              <%= image_tag img %>
             </div>
-        </div>
-        <br>
-        <hr>
+            <% end %>
+          </div>
 
-        <!-- Map -->
+          <!-- Left and right controls -->
+          <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a
+            class="right carousel-control"
+            href="#myCarousel"
+            data-slide="next"
+          >
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        <% end %>
+      </div>
+      <hr />
+
+      <!-- Reviews -->
+      <div class="row">
+        <div class="col-md-12">
+          <h3>
+            <%= pluralize(@guest_reviews.count, "Review") %>
+            <span id="average_rating"></span>
+          </h3>
+          <div class="container">
+            <div><%= render "reviews/guest_list" %></div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <hr />
+
+      <!-- Map -->
+      <div class="row">
+        <div class="col-md-3">
+          <h4>Location</h4>
+        </div>
+        <div id="map" style="width: 100%; height: 400px;"></div>
+        <script>
+              var map;
+              function initMap() {
+                  var location = {
+                      lat: <%= @room.latitude %>,
+                      lng: <%= @room.longitude %>
+                  };
+                  var zoom = 16;
+                  map = new google.maps.Map(document.getElementById('map'), {
+                  center: location,
+                  zoom: zoom
+              });
+              var marker = new google.maps.Marker({
+                  position: location,
+                  map: map
+              });
+              var contentString = '<div id="content"><%= image_tag @images[0], class:"avatar-full" %></div>';
+              var infowindow = new google.maps.InfoWindow({
+                  content: contentString
+              });
+              marker.addListener('click', function() {
+                  infowindow.open(map, marker);
+              })
+          }
+        </script>
+        <script
+          async=""
+          defer=""
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ_Dn5rMHkyzxbjWVa2WMn0G8OsW5EXsM&amp;callback=initMap"
+        ></script>
+      </div>
+      <hr />
+
+      <!-- Nearby listings -->
+      <div class="row">
         <div class="row">
-            <div class="col-md-3">
-                <h4>Location</h4>
+          <h3>More places to stay</h3>
+          <% for room in @room.nearbys(10) %>
+          <div class="col-md-4">
+            <div class="panel-default">
+              <div class="panel-heading preview">
+                <%= image_tag room.images[0], class:"avatar-full" %>
+              </div>
+              <div class="panel-body">
+                <%= link_to room.listing_name, room %><br />
+                (<%= room.distance.round(2) %> miles away)
+              </div>
             </div>
-            <div id="map" style="width: 100%; height: 400px"></div>
-            <script>
-                var map;
-                function initMap() {
-                    var location = {
-                        lat: <%= @room.latitude %>,
-                        lng: <%= @room.longitude %>
-                    };
-                    var zoom = 16;
-                    map = new google.maps.Map(document.getElementById('map'), {
-                    center: location,
-                    zoom: zoom
-                });
-                var marker = new google.maps.Marker({
-                    position: location,
-                    map: map
-                });
-                var contentString = '<div id="content"><%= image_tag @images[0], class:"avatar-full" %></div>';
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
-                marker.addListener('click', function() {
-                    infowindow.open(map, marker);
-                })
-            }
-            </script>
-            <script async="" defer="" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ_Dn5rMHkyzxbjWVa2WMn0G8OsW5EXsM&amp;callback=initMap"></script>
-
+          </div>
+          <% end %>
         </div>
-        <hr>
-
-        <!-- Nearby listings -->
-        <div class="row">
-            <div class="row">
-                <h3>More places to stay</h3>
-                <% for room in @room.nearbys(10) %>
-                    <div class="col-md-4">
-                        <div class="panel-default">
-                            <div class="panel-heading preview">
-                                <%= image_tag room.images[0], class:"avatar-full" %>
-                            </div>
-                            <div class="panel-body">
-                                <%= link_to room.listing_name, room %><br/>
-                                (<%= room.distance.round(2) %> miles away)
-                            </div>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-        </div>
-        <hr>
+      </div>
+      <hr />
     </div>
     <!-- Right Panel -->
     <div class="col-md-4">
-        <!--Reservation Form -->
+      <!--Reservation Form -->
 
-        <%= render 'reservations/form' %>
+      <%= render 'reservations/form' %>
     </div>
+  </div>
 </div>
