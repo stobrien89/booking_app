@@ -8,18 +8,19 @@ require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
 require("jquery");
-import "bootstrap";
+window.jQuery = $;
+window.$ = $;
+require("bootstrap");
 import flatpickr from "flatpickr";
-require("raty-js");
-require("geocomplete");
 require("flatpickr/dist/flatpickr.min.css");
 document.addEventListener("turbolinks:load", () => {
   flatpickr(".datepicker", {
+    altInput: true,
     dateFormat: "d-m-Y",
   });
 });
-window.jQuery = $;
-window.$ = $;
+require("raty-js");
+require("geocomplete");
 require("webpack-jquery-ui/css");
 require("webpack-jquery-ui/slider");
 

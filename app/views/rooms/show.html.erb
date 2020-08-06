@@ -9,14 +9,14 @@
 <div class="container">
   <div class="row">
     <!-- Left Panel -->
-    <div class="col-md-8">
+    <div class="col-xs-8 col-sm-8 col-md-8">
       <!-- Listing Name -->
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-xs-8  col-sm-8 col-md-8">
           <h1><%= @room.listing_name %></h1>
           <%= @room.address %>
         </div>
-        <div class="col-md-4 text-center">
+        <div class="col-xs-4 col-sm-4 col-md-4 text-center">
           <%= image_tag avatar_url(@room.user), class: "img-circle avatar-large"
           %> <br /><br />
           <%= @room.user.fullname %>
@@ -27,29 +27,29 @@
       <!-- Room Info -->
       <div class="row">
         <div class="row text-center row-space-1">
-          <div class="col-md-3">
+          <div class="col-xs-3 col-sm-3 col-md-3">
             <i class="fa fa-home fa-2x"></i>
           </div>
-          <div class="col-md-3">
+          <div class="col-xs-3  col-sm-3 col-md-3">
             <i class="fa fa-user-circle-o fa-2x"></i>
           </div>
-          <div class="col-md-3">
+          <div class="col-xs-3  col-sm-3 col-md-3">
             <i class="fa fa-bed fa-2x"></i>
           </div>
-          <div class="col-md-3">
+          <div class="col-xs-3 col-sm-3 col-md-3">
             <i class="fa fa-bath fa-2x"></i>
           </div>
         </div>
 
         <div class="row text-center">
-          <div class="col-md-3"><%= @room.home_type %></div>
-          <div class="col-md-3">
+          <div class="col-xs-3 col-sm-3 col-md-3"><%= @room.home_type %></div>
+          <div class="col-xs-3 col-sm-3 col-md-3">
             <%= pluralize(@room.accomodates, "Guest") %>
           </div>
-          <div class="col-md-3">
+          <div class="col-xs-3 col-sm-3 col-md-3">
             <%= pluralize(@room.bedrooms, "Bedroom") %>
           </div>
-          <div class="col-md-3">
+          <div class="col-xs-3 col-sm-3 col-md-3">
             <%= pluralize(@room.bathrooms, "Bathroom") %>
           </div>
         </div>
@@ -68,8 +68,12 @@
       <!-- Amenities -->
       <div class="row">
         <div class="col-md-3">
-          <h4>Amenities</h4>
+          <h3>Amenities</h3>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="col-md-9">
           <div class="row">
             <div class="col-md-6">
@@ -207,7 +211,7 @@
       <hr />
     </div>
     <!-- Right Panel -->
-    <div class="col-md-4">
+    <div class="col-sm-4 col-md-4">
       <!--Reservation Form -->
 
       <%= render 'reservations/form' %>

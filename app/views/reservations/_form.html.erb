@@ -6,11 +6,11 @@
     <div class="panel-body">
         <%= form_for([@room, @room.reservations.new]) do |f| %>
            <div class="row">
-                <div class="col-md-6">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     <label>Check In</label>
                     <%= f.text_field :start_date, class: " datepicker form-control" %>
                 </div>
-                <div class="col-md-6">
+                <div class="col-xs-6 col-sm-6 col-md-6">
                     <label>Check Out</label>
                     <%= f.text_field :end_date, class: " datepicker form-control" %>
                 </div>

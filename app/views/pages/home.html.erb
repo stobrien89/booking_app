@@ -5,30 +5,30 @@
             <p class="lead text-muted">
             Break out of your shell and do something different
             </p>
-                <div class="form-horizontal">
-                    <%= form_tag search_path, class: "form-group",  method: :get do %>
-                        <div class="form-group">
-                            
-                            <div class="col-md-2 col-sm-2">
-                                <%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control ", id: "autolocation" %>
-                            </div>
-                            <div class="col-md-2 col-sm-2">
-                                <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control form-control-sm datepicker" %>
-                            </div>
-                            <div class="col-md-2 col-sm-2">
-                                <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: "form-control form-control-sm datepicker" %>
-                            </div>
-                            
+            <div class="form-horizontal">
+                <%= form_tag search_path, class: "form-group",  method: :get do %>
+                    <div class="form-group">
+                        
+                        <div class="col-md-2 col-sm-2">
+                            <%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control", id: "autolocation" %>
                         </div>
-                        <br>
-                
-                        <div class="row">
-                            <div class="col-md-offset-2 col-md-2">
-                                <%= submit_tag "Search", class: "btn btn-lg btn-submit btn-round search-btn" %>
-                            </div>
+                        <div class="col-md-2 col-sm-2 flatpickr">
+                            <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
                         </div>
-                    <% end %>
-                </div>
+                        <div class="col-md-2 col-sm-2 flatpickr">
+                            <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: " form-control datepicker" %>
+                        </div>
+                        
+                    </div>
+                    <br>
+            
+                    <div class="row">
+                        <div class="col-md-offset-2 col-md-2">
+                            <%= submit_tag "Search", class: "btn btn-lg btn-submit btn-round search-btn" %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
         </div>
     </section>
 

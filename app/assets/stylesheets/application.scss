@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require bootstrap
+  *= require bootstrap
 
   *= require_tree 
 
@@ -38,10 +38,6 @@ body {
   width: 80% !important;
 }
 
-main {
-  margin-top: 70px;
-}
-
 //Nav styles
 .sidebar-list {
   list-style: none;
@@ -55,7 +51,7 @@ main {
 .navbar-default,
 navbar-nav {
   background-color: #4056a1;
-  border: 10px solid #4056a1 !important;
+  border: 1px solid;
 }
 .dropdown-toggle {
   background-color: #4056a1 !important;
@@ -137,11 +133,11 @@ navbar-nav {
 }
 
 //User Profile styles
-.panel-default,
-.panel-heading {
-  font-size: 2rem;
-  font-weight: 400;
-}
+// .panel-default,
+// .panel-heading {
+//   font-size: 2rem;
+//   font-weight: 400;
+// }
 
 //Avatar sizes
 .avatar-small {
@@ -161,7 +157,7 @@ navbar-nav {
 .amenities li {
   list-style: none;
   margin-bottom: 10px;
-  font-size: 16px;
+  // font-size: 16px;
 }
 
 //reservation table
@@ -173,7 +169,7 @@ navbar-nav {
 }
 
 .reservation-table .total td {
-  font-size: 16px;
+  // font-size: 16px;
   font-weight: bold;
   border: none;
 }
@@ -206,7 +202,7 @@ form-control.datepicker {
 
 //Home Page
 .jumbotron {
-  padding-top: 70px !important;
+  padding-top: 150px !important;
 }
 
 .text-muted {
@@ -224,4 +220,17 @@ form-control.datepicker {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+//media queries
+@media (max-width: 768px) {
+  body {
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 14px !important;
+  }
 }
