@@ -1,12 +1,17 @@
-<!-- Image -->
-<div class="row">
-  <div class="col-md-12">
-    <%= image_tag @room.images[0], class: "img-responsive" %>
-  </div>
-</div>
-<br />
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
 
 <div class="container">
+  <!-- Image -->
+  <div class="row">
+    <div class="col-md-12">
+      <%= image_tag @room.images[0], class: "img-responsive" %>
+    </div>
+  </div>
+  <br />
+
+
   <div class="row">
     <!-- Left Panel -->
     <div class="col-xs-8 col-sm-8 col-md-8">

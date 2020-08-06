@@ -1,3 +1,7 @@
+<% content_for :head do %>
+  <meta name="turbolinks-cache-control" content="no-cache">
+<% end %>
+
 <main role="main">
     <section class="jumbotron jumbotron-bg">
         <div class="container">
@@ -50,26 +54,46 @@
         </div>
         <br>
 
-        <div class="row">
+        <div class="row" style="display:flex; flex-wrap: wrap">
             <div class="col-md-3 col-sm-12">
-                <a href="http://localhost:3000/search?search=london">
-                    <div class="discovery-card"></div>
-                </a>
+                <div class="panel">
+                    <div class="preview">
+                        <%= image_tag 'hk.jpg', class:"img-thumbnail" %>
+                    </div>
+                    <div class="panel-body">
+                        <a href="http://localhost:3000/search?search=Hong+Kong&start_date=&end_date=&commit=Search"> Hong Kong</a>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3 col-sm-12">
-                <a href="http://localhost:3000/search?search=london">
-                    <div class="discovery-card"></div>
-                </a>
+                <div class="panel">
+                    <div class="preview">
+                        <%= image_tag 'cp.jpg', class:"img-thumbnail" %>
+                    </div>
+                    <div class="panel-body">
+                        <a href="http://localhost:3000/search?search=Copenhagen%2C+Denmark&start_date=&end_date=&commit=Search"> Denmark</a>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3 col-sm-12">
-                <a href="http://localhost:3000/search?search=london">
-                    <div class="discovery-card"></div>
-                </a>
+               <div class="panel">
+                    <div class="preview">
+                        <%= image_tag 'mk.jpg', class:"img-thumbnail" %>
+                    </div>
+                    <div class="panel-body">
+                        <a href="http://localhost:3000/search?search=Morocco&start_date=&end_date=&commit=Search"> Morocco</a>
+                    </div>
+                </div>
             </div>
             <div class="col-md-3 col-sm-12">
-                <a href="http://localhost:3000/search?search=london">
-                    <div class="discovery-card"></div>
-                </a>
+                <div class="panel">
+                    <div class="preview">
+                        <%= image_tag 'sea.jpg', class:"img-thumbnail" %>
+                    </div>
+                    <div class="panel-body">
+                        <a href="http://localhost:3000/search?search=Seattle%2C+WA%2C+USA&start_date=&end_date=&commit=Search"> Seattle</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

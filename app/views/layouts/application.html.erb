@@ -5,6 +5,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
     <script src="https://use.fontawesome.com/9c64152c9c.js"></script>
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ_Dn5rMHkyzxbjWVa2WMn0G8OsW5EXsM&libraries=places", data-turbolinks-eval="false"></script>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
