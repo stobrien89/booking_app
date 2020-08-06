@@ -19,12 +19,14 @@
  */
 
 // color scheme:
-// pale gold: #D79922
-// eggshell: #EFE2BA
-// bright red: #F13C20
+// pale red #9D3744
+// dark grey: #757687
+// light grey: #A9AABC
 // deep blue: #4056A1
-// light blue: #C5CBE3
+// salmon: #D86B74
 // off-white : #F0F1EB
+//light blue: #C5CBE3
+//bright red: #F13C20
 
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito+Sans:wght@300&display=swap");
 @font-face {
@@ -36,16 +38,30 @@
     url("/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular")
       format("svg");
 }
+@font-face {
+  font-family: "Circular";
+  src: url("/assets/circular_std.ttf");
+}
+
+.primary {
+  color: #4056a1;
+}
+
+.btn {
+  background-color: #d86b74;
+  color: #f0f1eb;
+}
 
 body {
+  padding-top: 65px;
   margin: 0 auto;
   background-color: #f0f1eb;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: Circular, "Nunito Sans", sans-serif;
 }
 
 .toast {
-  margin-top: 52.5px;
-  margin-bottom: 0px;
+  // margin-top: 52.5px;
+  // margin-bottom: 0px;
 }
 
 .container {
@@ -116,7 +132,7 @@ navbar-nav {
 }
 
 .search-btn {
-  background-color: #d79922;
+  background-color: #d86b74;
   color: #f0f1eb;
 }
 
@@ -216,12 +232,12 @@ form-control.datepicker {
 
 //Home Page
 .jumbotron {
+  color: #4056a1;
   padding-top: 150px !important;
 }
 
 .text-muted {
-  color: #efe2ba;
-  text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+  color: #d86b74;
 }
 
 .jumbotron-bg {
