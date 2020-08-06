@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2020_07_31_215828) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
-    t.integer "record_id", null: false
-    t.integer "blob_id", null: false
+    t.bigint "record_id", null: false
+    t.bigint "blob_id", null: false
     t.datetime "created_at", null: false
     t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
@@ -34,8 +37,8 @@ ActiveRecord::Schema.define(version: 2020_07_31_215828) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "room_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "room_id", null: false
     t.datetime "start_date"
     t.datetime "end_date"
     t.integer "price"
@@ -49,10 +52,10 @@ ActiveRecord::Schema.define(version: 2020_07_31_215828) do
   create_table "reviews", force: :cascade do |t|
     t.text "comment"
     t.integer "rating", default: 1
-    t.integer "room_id", null: false
-    t.integer "reservation_id", null: false
-    t.integer "guest_id", null: false
-    t.integer "host_id", null: false
+    t.bigint "room_id", null: false
+    t.bigint "reservation_id", null: false
+    t.bigint "guest_id", null: false
+    t.bigint "host_id", null: false
     t.string "type"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -78,7 +81,7 @@ ActiveRecord::Schema.define(version: 2020_07_31_215828) do
     t.boolean "internet"
     t.integer "price"
     t.boolean "active"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
