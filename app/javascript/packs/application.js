@@ -18,11 +18,29 @@ document.addEventListener("turbolinks:load", () => {
     altInput: true,
     dateFormat: "d-m-Y",
   });
+
+  $(".owl-carousel").owlCarousel({
+    loop: true,
+    margin: 10,
+    responsive: {
+      0: {
+        items: 1,
+      },
+      600: {
+        items: 3,
+      },
+      1000: {
+        items: 5,
+      },
+    },
+  });
 });
 require("raty-js");
 require("geocomplete");
 require("webpack-jquery-ui/css");
 require("webpack-jquery-ui/slider");
+require("owl.carousel");
+require("owl.carousel/dist/assets/owl.carousel.css");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)

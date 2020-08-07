@@ -1,14 +1,16 @@
 <div class="container">
-  <div class="row" style="margin-top: 100px;">
-    <div class="col-md-3">
-      <ul class="sidebar-list">
-        <li class="sidebar-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "sidebar-link active" %></li>
-      </ul>
-      <br/>
-      <%= link_to "View My Profile", user_path(current_user.id), class: "btn btn-default" %>
+  <div class="row" style="margin-top: 50px;">
+    <div class="col-xs-12 col-md-3">
+      <div class="row text-center">
+        
+          <ul class="sidebar-list">
+            <li class="sidebar-item"><%= link_to "Edit Profile", edit_user_registration_path, class: "sidebar-link active" %></li>
+            <li><%= link_to "View my Profile", user_path(current_user.id), class: "btn" %></li>
+          </ul>
+      </div>
     </div>
     
-    <div class="col-md-9 text-center">
+    <div class="col-xs-12 col-md-9 text-center">
       <div class="panel panel-default">
         <div class="panel-heading">Your Profile</div>
         <div class="panel-body">

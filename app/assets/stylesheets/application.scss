@@ -58,7 +58,12 @@ html {
   color: #f0f1eb;
 }
 
+.img-thumbnail {
+  border: none;
+}
+
 body {
+  color: #757687;
   padding: 45px 0 0 0;
   margin-bottom: 350px;
   background-color: #f0f1eb;
@@ -111,7 +116,8 @@ navbar-nav {
 }
 
 .dropdown-menu,
-.dropdown-menu > a {
+.dropdown-menu > li > a {
+  background-color: #f0f1eb;
   border-radius: 20px !important;
 }
 
@@ -273,6 +279,7 @@ form-control.datepicker {
   font-weight: 100 !important;
 }
 
+// panel header secondary color
 .secondary-header {
   background-color: #d86b74 !important;
   color: #f0f1eb !important;
