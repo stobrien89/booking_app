@@ -1,7 +1,9 @@
 class RoomsController < ApplicationController
+  around_action :catch_not_found
   before_action :set_room, except: [:index, :new, :create, :delete_image_attachment]
   before_action :authenticate_user!, except: [:show]
   before_action :is_authorized, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
+  
 
   def index
     @rooms = current_user.rooms
@@ -63,7 +65,7 @@ class RoomsController < ApplicationController
     @image.purge
     redirect_back(fallback_location: request.referer)
   end
-
+  
   private
     def set_room
       @room = Room.find(params[:id])
@@ -75,5 +77,11 @@ class RoomsController < ApplicationController
 
     def room_params
       params.require(:room).permit(:home_type, :room_type, :accomodates, :bedrooms, :bathrooms, :listing_name, :summary, :address, :tv, :kitchen, :air_conditioning, :heating, :internet, :price, :active, images: [])
+    end
+
+    def catch_not_found
+      yield
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_url, alert: "Record not found"
     end
 end
