@@ -1,20 +1,20 @@
 <div class="container">
-    <div class="row" style="margin-top: 100px;">
+    <div class="row" style="margin-top: 30px;">
         <div class="col-md-3">
             <%= render 'room_menu' %>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9" style="margin-top: 50px;">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Location
+                <div class="panel-heading secondary-header">
+                    <h4>Location</h4>
                 </div>
                 <div class="panel-body">
                     <div class="container">
                         <%= form_for @room do |f| %>
                             <div class="row">
-                                <div class="form-group">
+                                <div class="form-group col-md-12">
                                     <label>Address</label>
-                                    <%= f.text_field :address, placeholder: "Listing Address", class: "form-conrol", required: true, id:"autoaddress" %>
+                                    <%= f.text_field :address, placeholder: "Listing Address", class: "form-control", required: true, id:"autoaddress" %>
                                 </div>
                             </div>
 

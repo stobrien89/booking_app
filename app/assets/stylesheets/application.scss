@@ -65,9 +65,17 @@ body {
   font-family: Circular, "Nunito Sans", sans-serif;
 }
 
+a {
+  color: inherit;
+}
+
 .toast {
   margin-top: 8px;
   margin-bottom: 0px;
+}
+
+.fa-check {
+  color: #a9aabc;
 }
 
 .container {
@@ -169,11 +177,6 @@ navbar-nav {
 }
 
 //User Profile styles
-// .panel-default,
-// .panel-heading {
-//   font-size: 2rem;
-//   font-weight: 400;
-// }
 
 //Avatar sizes
 .avatar-small {
@@ -268,6 +271,11 @@ form-control.datepicker {
 
 .new-listing-header {
   font-weight: 100 !important;
+}
+
+.secondary-header {
+  background-color: #d86b74 !important;
+  color: #f0f1eb !important;
 }
 
 // Footer

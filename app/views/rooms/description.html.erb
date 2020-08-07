@@ -1,12 +1,12 @@
 <div class="container">
-    <div class="row" style="margin-top: 100px;">
+    <div class="row" style="margin-top: 30px;">
         <div class="col-md-3">
             <%= render 'room_menu' %>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9" style="margin-top: 50px;">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Description
+                <div class="panel-heading secondary-header">
+                    <h4>Description</h4>
                 </div>
                 <div class="panel-body">
                     <div class="container">
@@ -14,14 +14,14 @@
                             <div class="row">
                                 <div class="form-group">
                                     <label>Listing Name</label>
-                                    <%= f.text_field :listing_name, placeholder: "Listing Name", class: "form-conrol", required: true %>
+                                    <%= f.text_field :listing_name, placeholder: "Listing Name", class: "form-control", required: true %>
                                 </div>
                             </div>
                             
                             <div class="row">
                                 <div class="form-group">
                                     <label>Summary</label>
-                                    <%= f.text_field :summary, row: 5, placeholder: "Tell us about your place!", class: "form-conrol", required: true %>
+                                    <%= f.text_area :summary, rows: 5, placeholder: "Tell us about your place!", class: "form-control", required: true %>
                                 </div>
                             </div>
 

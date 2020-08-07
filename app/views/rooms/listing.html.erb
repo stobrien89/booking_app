@@ -1,12 +1,12 @@
 <div class="container">
-    <div class="row" style="margin-top: 100px;">
-        <div class="col-md-3">
+    <div class="row" style="margin-top: 30px;">
+        <div class="col-xs-3 col-sm-3 col-md-3">
             <%= render 'room_menu' %>
         </div>
-        <div class="col-md-9">
+        <div class="col-xs-9 col-sm-9 col-md-9" style="margin-top: 50px;">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    Listing
+                <div class="panel-heading secondary-header">
+                    <h4>Listing</h4>
                 </div>
                 <div class="panel-body">
                     <div class="container">
@@ -15,40 +15,40 @@
                                 <div class="col-md-4 select">
                                     <div class="form-group">
                                         <label>Home Type</label>
-                                        <%= f.select :home_type, [["House", "House"], ["Apartment", "Apartment"], ["Hostel", "Hostel"], ["Bed & Breakfast", "Bed & Breakfast"]], id: "home_type", prompt: "Select", class: "form_control" %>
+                                        <%= f.select :home_type, [["House", "House"], ["Apartment", "Apartment"], ["Hostel", "Hostel"], ["Bed & Breakfast", "Bed & Breakfast"]], id: "home_type", prompt: "Select", class: "form-control" %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 select">
                                     <div class="form-group">
                                         <label>Room Type</label>
-                                        <%= f.select :room_type, [["Entire Place", "Entire Place"], ["Private Room", "Private Room"], ["Shared Room", "Shared Room"]], id: "room_type", prompt: "Select", class: "form_control" %>
+                                        <%= f.select :room_type, [["Entire Place", "Entire Place"], ["Private Room", "Private Room"], ["Shared Room", "Shared Room"]], id: "room_type", prompt: "Select", class: "form-control" %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 select">
                                     <div class="form-group">
                                         <label>Occupancy</label>
-                                        <%= f.select :accomodates, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]], id: "accomodates", prompt: "Select", class: "form_control" %>
+                                        <%= f.select :accomodates, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]], id: "accomodates", prompt: "Select", class: "form-control" %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 select">
                                     <div class="form-group">
                                         <label>Bedrooms</label>
-                                        <%= f.select :bedrooms, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]], id: "bedrooms", prompt: "Select", class: "form_control" %>
+                                        <%= f.select :bedrooms, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]], id: "bedrooms", prompt: "Select", class: "form-control" %>
                                     </div>
                                 </div>
 
                                 <div class="col-md-4 select">
                                     <div class="form-group">
                                         <label>Bathrooms</label>
-                                        <%= f.select :bathrooms, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]], id: "bathrooms", prompt: "Select", class: "form_control" %>
+                                        <%= f.select :bathrooms, [["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5+", 5]], id: "bathrooms", prompt: "Select", class: "form-control" %>
                                     </div>
                                 </div>
                             </div>
-
-                            <div><%= f.submit "Save", class: "btn-btn-default" %></div>
+                            <br>
+                            <div class="text-center"><%= f.submit "Save", class: "btn" %></div>
                         <% end %>
                     </div>
                 </div>
