@@ -1,2 +1,1 @@
- linguist-vendored
-.erb linguist-vendored=false
+*.erb linguist-language=Ruby
