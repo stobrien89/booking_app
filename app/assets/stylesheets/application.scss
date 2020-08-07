@@ -19,10 +19,11 @@
  */
 
 // color scheme:
+//pale gold: #D79922
 // pale red #9D3744
 // dark grey: #757687
 // light grey: #A9AABC
-// deep blue: #4056A1
+// deep blue: #106DC0
 // salmon: #D86B74
 // off-white : #F0F1EB
 //light blue: #C5CBE3
@@ -49,7 +50,7 @@ html {
 }
 
 .primary {
-  color: #4056a1;
+  color: #106dc0;
 }
 
 .btn {
@@ -85,11 +86,11 @@ body {
 
 .navbar-default,
 navbar-nav {
-  background-color: #4056a1;
+  background-color: #106dc0;
   border: 1px solid;
 }
 .dropdown-toggle {
-  background-color: #4056a1 !important;
+  background-color: #106dc0 !important;
 }
 
 .navbar-default .navbar-nav > li > a,
@@ -237,7 +238,7 @@ form-control.datepicker {
 
 //Home Page
 .jumbotron {
-  color: #4056a1;
+  color: #106dc0;
   padding-top: 150px !important;
 }
 
@@ -263,13 +264,19 @@ form-control.datepicker {
   background-position: center;
 }
 
+//New Listing pages
+
+.new-listing-header {
+  font-weight: 100 !important;
+}
+
 // Footer
 
 .footer-bs {
   height: 350px;
   position: absolute;
   bottom: 0;
-  background-color: #4056a1;
+  background-color: #106dc0;
   padding: 60px 40px;
   color: #f0f1eb;
   border-bottom-right-radius: 6px;
@@ -369,7 +376,7 @@ form-control.datepicker {
   .footer-bs .footer-nav,
   .footer-bs .footer-social,
   .footer-bs .footer-ns {
-    border-left: solid 1px #4056a1;
+    border-left: solid 1px #106dc0;
   }
 }
 
@@ -388,5 +395,8 @@ form-control.datepicker {
 @media (max-width: 992px) {
   body {
     font-size: 14px !important;
+  }
+  .new-listing-img {
+    display: none;
   }
 }
