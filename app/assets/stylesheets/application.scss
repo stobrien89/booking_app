@@ -32,11 +32,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito+Sans:wght@300&display=swap");
 @font-face {
   font-family: "Glyphicons Halflings";
-  src: url("/assets/glyphicons-halflings-regular.eot");
-  src: url("/assets/glyphicons-halflings-regular.eot?iefix") format("eot"),
-    url("/assets/glyphicons-halflings-regular.woff") format("woff"),
-    url("/assets/glyphicons-halflings-regular.ttf") format("truetype"),
-    url("/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular")
+  src: asset-url("/assets/glyphicons-halflings-regular.eot");
+  src: asset-url("/assets/glyphicons-halflings-regular.eot?iefix") format("eot"),
+    asset-url("/assets/glyphicons-halflings-regular.woff") format("woff"),
+    asset-url("/assets/glyphicons-halflings-regular.ttf") format("truetype"),
+    asset-url(
+        "/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular"
+      )
       format("svg");
 }
 @font-face {
@@ -276,7 +278,7 @@ form-control.datepicker {
 }
 
 .discovery-card {
-  background-image: url("hk.jpg");
+  // background-image: url("hk.jpg");
   background-size: cover;
   background-position: center;
 }
