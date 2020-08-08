@@ -32,11 +32,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito+Sans:wght@300&display=swap");
 @font-face {
   font-family: "Glyphicons Halflings";
-  src: asset-url("/assets/glyphicons-halflings-regular.eot");
-  src: asset-url("/assets/glyphicons-halflings-regular.eot?iefix") format("eot"),
-    asset-url("/assets/glyphicons-halflings-regular.woff") format("woff"),
-    asset-url("/assets/glyphicons-halflings-regular.ttf") format("truetype"),
-    asset-url(
+  src: asset-path("/assets/glyphicons-halflings-regular.eot");
+  src: asset-path("/assets/glyphicons-halflings-regular.eot?iefix")
+      format("eot"),
+    asset-path("/assets/glyphicons-halflings-regular.woff") format("woff"),
+    asset-path("/assets/glyphicons-halflings-regular.ttf") format("truetype"),
+    asset-path(
         "/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular"
       )
       format("svg");
