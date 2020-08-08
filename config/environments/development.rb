@@ -29,7 +29,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
@@ -68,17 +68,9 @@ Rails.application.configure do
     :address => 'smtp.mailgun.org',
     :port => 587,
     :authentication => 'plain',
-    :domain => 'sandbox94f9db8c40434a128050d3027698e736.mailgun.org',
-    :user_name => 'postmaster@sandbox94f9db8c40434a128050d3027698e736.mailgun.org',
-    :password => 'fec09c9007a0d9b8b56980eb0e73bb86-a65173b1-5d2c575c',
+    :domain => ENV["mailgun_domain"],
+    :user_name => ENV["mailgun_username"],
+    :password => ENV["mailgun_password"],
   }
   
-  # config.action_mailer.smtp_settings = {
-  #   :address => 'smtp-relay.sendinblue.com',
-  #   :port => 587,
-  #   :authentication => 'login',
-  #   :user_name => 'obrien.sean.dev@gmail.com',
-  #   :password => 'Ug68RcQAVksIfKOa',
-  #   :enable_starttls_auto => true
-  # }
 end

@@ -39,3 +39,9 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+/config/credentials/development.key
+
+
+# Ignore application configuration
+/config/application.yml

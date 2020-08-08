@@ -69,3 +69,9 @@ gem 'geocoder', '~> 1.4'
 
 #search functionality
 gem 'ransack'
+
+#env
+gem 'figaro'
+
+#AWS photo storage
+gem "aws-sdk-s3", require: false
