@@ -32,19 +32,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito+Sans:wght@300&display=swap");
 @font-face {
   font-family: "Glyphicons Halflings";
-  src: asset-path("/assets/glyphicons-halflings-regular.eot");
-  src: asset-path("/assets/glyphicons-halflings-regular.eot?iefix")
-      format("eot"),
-    asset-path("/assets/glyphicons-halflings-regular.woff") format("woff"),
-    asset-path("/assets/glyphicons-halflings-regular.ttf") format("truetype"),
-    asset-path(
-        "/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular"
-      )
+  src: font-url("glyphicons-halflings-regular.eot");
+  src: font-url("glyphicons-halflings-regular.eot?iefix") format("eot"),
+    font-url("glyphicons-halflings-regular.woff") format("woff"),
+    font-url("glyphicons-halflings-regular.ttf") format("truetype"),
+    font-url("glyphicons-halflings-regular.svg#glyphicons_halflingsregular")
       format("svg");
 }
 @font-face {
   font-family: "Circular";
-  src: url("/assets/circular_std.ttf");
+  src: font-url("circular_std.ttf");
 }
 
 html {
