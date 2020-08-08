@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <span>$<strong><%= @room.price %></strong> / night</span>
-        <span class="pull-right">Reviews go here</span>
+        <span class="pull-right"><i class="fa fa-star">&nbsp;</i><%= @room.average_rating %> (<%= @room.guest_reviews.count %>)</span>
     </div>
     <div class="panel-body">
         <%= form_for([@room, @room.reservations.new]) do |f| %>

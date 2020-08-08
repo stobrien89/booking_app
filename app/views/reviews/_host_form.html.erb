@@ -23,7 +23,7 @@
 
             <%= f.hidden_field :room_id, value: reservation.room.id %>
             <%= f.hidden_field :reservation_id, value: reservation.id %>
-            <%= f.hidden_field :guest_id, value: reservation.room.user.id %>
+            <%= f.hidden_field :guest_id, value: reservation.user.id %>
 
             <div class="text-center">
                 <%= f.submit "Submit Review", class: "btn btn-normal" %>

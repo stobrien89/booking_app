@@ -8,16 +8,16 @@
             <div class="panel panel-default">
                 <div class="panel-heading secondary-header">Verification</div>
                 <div class="panel-body">
-                    <ul class="sidebar-list">
+                    <ul class="sidebar-list verification">
                         <% if @user.confirmation_token %>
-                            <li>Email Address <span class="pull-right"><i class="fa fa-check-circle-o"></i></span></li>
+                            <li><i class="fa fa-envelope-o"></i>&nbsp; Email Address <span class="pull-right"><i class="fa fa-check-circle-o"></i></span></li>
                         <% end %>
                         <% if @user.provider %>
-                            <li>Facebook <span class="pull-right"><i class="fa fa-check-circle-o"></i></span></li>
+                            <li><i class="fa fa-facebook-square"></i>&nbsp; Facebook<span class="pull-right"><i class="fa fa-check-circle-o"></i></span></li>
                         <% end %>
-                        <li>Phone Number<span class="pull-right"><i class="fa fa-check-circle-o"></i></span></li>
+                        <li><i class="fa fa-phone"></i>&nbsp;Phone Number<span class="pull-right"><i class="fa fa-check-circle-o"></i></span></li>
                     </ul> 
-                </div>
+                </div> 
             </div>
         </div>
             
@@ -36,12 +36,12 @@
             </div>
             <br>
 
-            <h4>Guest Reviews (<%= @guest_reviews.count %>)</h4>
+            <h4>Reviews From Guests (<%= @guest_reviews.count %>)</h4>
             <div class="row">
                 <%= render "reviews/guest_list" %>
             </div>
             <br>
-            <h4>Host Reviews (<%= @host_reviews.count %>)</h4>
+            <h4>Reviews From Hosts (<%= @host_reviews.count %>)</h4>
             <div class="row">
                 <%= render "reviews/host_list" %>
             </div>
