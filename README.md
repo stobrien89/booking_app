@@ -1,4 +1,18 @@
-# under_construction
+# Bookify
+
+## Summary
+
+I've always been a huge fan on marketplace platforms (uber, lyft, airbnb, rover, etc.), but especially those geared towards travel. Hotels are waay too expensive.
+Bookify is an app similar to airbnb or vrbo— users can either book a stay at a hosts home, or list their own home to host guests.
+
+## Technologies
+
+- Ruby/Rails
+- Webpack
+- Postgresql/sqlite
+- Amazon S3
+- Google Maps API
+- Mailgun
 
 ## User Stories
 
@@ -13,7 +27,6 @@ As a user, I should be able be able to add a room/space to book and alternativel
 ## Reservations
 
 As a user, I should be able to should be able to review my experience booking a room/space.
-As a user, I should be able to confirm my booking via secure payment.
 
 ## Searching
 
