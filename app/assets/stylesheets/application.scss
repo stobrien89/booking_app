@@ -62,6 +62,11 @@ html {
   color: #d86b74;
 }
 
+h3,
+h4 {
+  color: #4e5a65;
+}
+
 .img-thumbnail {
   border: none;
 }
@@ -92,6 +97,10 @@ a {
 }
 
 //Nav styles
+.text-white {
+  color: #f0f1eb !important;
+}
+
 .sidebar-list {
   list-style: none;
 }
@@ -290,6 +299,9 @@ form-control.datepicker {
 // panel header secondary color
 .secondary-header {
   background-color: #d86b74 !important;
+}
+
+.secondary-header > h4 {
   color: #f0f1eb !important;
 }
 
