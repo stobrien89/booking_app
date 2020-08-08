@@ -63,8 +63,9 @@ html {
 }
 
 h3,
-h4 {
-  color: #4e5a65;
+h4,
+.dark-gray {
+  color: #4e5a65 !important;
 }
 
 .img-thumbnail {
