@@ -422,21 +422,26 @@ form-control.datepicker {
   }
 }
 
-@media (max-width: 768px) {
-  body {
-    margin-bottom: 0;
-    font-size: 10px !important;
-  }
-  .footer-bs {
-    position: static;
-    height: 100%;
-    margin-top: 75px;
-  }
-}
+// @media (max-width: 768px) {
+//   body {
+//     font-size: 10px !important;
+//   }
+//   .footer-bs {
+//     position: static;
+//     height: auto;
+//     margin-top: 75px;
+//     bottom: 0;
+//     left: 0;
+//   }
+// }
 
 @media (max-width: 992px) {
   body {
+    margin-bottom: 600px;
     font-size: 14px !important;
+  }
+  .footer-bs {
+    height: 600px;
   }
   .new-listing-img {
     display: none;
