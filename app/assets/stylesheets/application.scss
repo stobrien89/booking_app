@@ -272,7 +272,7 @@ form-control.datepicker {
 //Home Page
 .jumbotron {
   color: #106dc0;
-  padding-top: 150px !important;
+  padding-top: 150px;
 }
 
 .text-muted {
@@ -435,13 +435,25 @@ form-control.datepicker {
 //   }
 // }
 
-@media (max-width: 992px) {
+@media (max-width: 769px) {
   body {
-    margin-bottom: 600px;
+    margin-bottom: 930px;
     font-size: 14px !important;
   }
+  .jumbotron {
+    padding-top: 15px;
+  }
+
+  .jumbotron-bg {
+    height: 80vh;
+  }
+
+  input {
+    margin-bottom: 5px;
+  }
+
   .footer-bs {
-    height: 600px;
+    height: 930px;
   }
   .new-listing-img {
     display: none;
