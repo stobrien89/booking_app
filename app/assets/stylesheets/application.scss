@@ -223,6 +223,10 @@ navbar-nav {
 }
 
 //Room Show page
+.amenities-container {
+  margin-top: 30px;
+}
+
 .amenities li {
   list-style: none;
   margin-bottom: 10px;
@@ -456,6 +460,19 @@ form-control.datepicker {
   }
   .facebook {
     margin-bottom: 50px;
+  }
+
+  //Room show page
+  .reservation-form {
+    margin-top: 25px;
+  }
+
+  .room-main-image {
+    margin-top: 30px;
+  }
+
+  .amenities li {
+    margin-bottom: 20px;
   }
 
   //footer
