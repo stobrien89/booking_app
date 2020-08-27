@@ -143,7 +143,7 @@ navbar-nav {
 
 //Form Styles
 .form-rounded {
-  width: 12vw !important;
+  width: 20vw !important;
   font-size: 1.25rem;
   text-align: left;
   border: 1px solid #dddddd !important;
@@ -460,6 +460,10 @@ form-control.datepicker {
   }
   .facebook {
     margin-bottom: 50px;
+  }
+
+  .form-rounded {
+    width: 100% !important;
   }
 
   //Room show page
