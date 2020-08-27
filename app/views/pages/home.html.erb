@@ -13,13 +13,13 @@
                 <%= form_tag search_path, class: "form-group",  method: :get do %>
                     <div class="form-group">
                         
-                        <div class="col-md-2 col-sm-2">
+                        <div class="col-md-2 col-sm-4 col-xs-12">
                             <%= text_field_tag :search, params[:search], placeholder: "Where are you going?", class: "form-control", id: "autolocation" %>
                         </div>
-                        <div class="col-md-2 col-sm-2 flatpickr">
+                        <div class="col-md-2 col-sm-4 col-xs-12 flatpickr">
                             <%= text_field_tag :start_date, params[:start_date], placeholder: "Start Date", class: "form-control datepicker" %>
                         </div>
-                        <div class="col-md-2 col-sm-2 flatpickr">
+                        <div class="col-md-2 col-sm-4 col-xs-12 flatpickr">
                             <%= text_field_tag :end_date, params[:end_date], placeholder: "End Date", class: " form-control datepicker" %>
                         </div>
                         
