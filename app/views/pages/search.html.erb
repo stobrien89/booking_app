@@ -165,10 +165,9 @@
       }
     </script>
     <script
-      var GOOGLE_API_KEY="#{ENV['GOOGLE_API_KEY']}"
       async=""
       defer=""
-      src="https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']};callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key=<%=ENV['GOOGLE_API_KEY']%>;callback=initMap"
       ,
       data-turbolinks-eval="false"
     ></script>
